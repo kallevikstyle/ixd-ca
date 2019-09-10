@@ -1,3 +1,11 @@
+/*Colors 
+Black:	#32383C;
+Cream:	#FFF3D9;
+Red:	#A02937;
+
+-----------------------*/
+
+
 /*-----------------------------
  GLOBAL
 -----------------------------*/
@@ -6,14 +14,14 @@ main, article, header, nav, section, aside, footer {
 }
 
 html {
-	background-color: pink;
+	background-color: #32383C;
 }
 
 body {
 	margin: 0 auto;
 	max-width: 1280px;
 	height: 800px;
-	background-color: lightgrey;
+	/*background-color: lightgrey;*/
 }
 
 /*-----------------------------
@@ -25,4 +33,20 @@ body {
 	width: 100%;
 	max-width: 1280px;
 	height: 150px;
+}
+
+/*-----------------------------
+ MAIN CONTENT
+-----------------------------*/
+
+/*Index CTA
+------------*/
+
+#hero-image {
+	width: 100%;
+	height: 853px;
+	background-image: url('../images/letha_hero_1280.jpg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: top center;
 }
