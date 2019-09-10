@@ -1,5 +1,5 @@
 /*Colors 
-Black:	#32383C;
+Black:	#32383C;	rgba(50, 56, 60, 0.5);
 Cream:	#FFF3D9;
 Red:	#A02937;
 
@@ -29,7 +29,8 @@ body {
 -----------------------------*/
 #page-header {
 	position: fixed;
-	background-color: grey;
+	background-color: #32383C;
+	background-color: rgba(50, 56, 60, 0.9);
 	width: 100%;
 	max-width: 1280px;
 	height: 150px;
