@@ -63,6 +63,7 @@ nav ul {
 }
 
 header #logo {
+	float: left;
 	margin-top: 35px;
 	margin-left: 2%;
 	width: 200px;
@@ -72,23 +73,32 @@ header #logo {
 	background-size: contain;
 }
 
-header nav {
+header #page-navigation {
 	/*border: 1px dashed yellow;*/
-	margin-left: 30%;
-	position: relative;
-	bottom: -8px;
+	margin-left: 50px;
+	float: left;
+	position: absolute;
+	bottom: 0;
 	display: inline-block;
-	font-size: 125%;
+	
 }
 
 header nav li {
 	margin-right: 12px;
 	padding: 2px 5px;
+	font-size: 125%;
 	/*border: 1px dotted white;*/
 }
 
 header nav li:last-child {
 	margin-right: 0;
+}
+
+header #page-tools {
+	border: 1px dashed yellow;
+	height: 100%;
+	float: right;
+	
 }
 
 /*-----------------------------
