@@ -22,6 +22,7 @@ main, article, header, nav, section, aside, footer {
 
 html {
 	background-color: #32383C;
+	font-size: 16px;
 }
 
 body {
@@ -42,6 +43,12 @@ nav ul li {
 	display: inline-block;
 }
 
+/*Font declarations
+---------------------*/
+nav ul {
+	font-family: "gill sans", helvetica, sans-serif;
+}
+
 /*-----------------------------
  PAGE HEADER
 -----------------------------*/
@@ -52,6 +59,7 @@ nav ul li {
 	width: 100%;
 	max-width: 1280px;
 	height: 150px;
+	color: #FFF3D9;
 }
 
 header #logo {
@@ -65,10 +73,22 @@ header #logo {
 }
 
 header nav {
-	border: 1px dashed yellow;
-	margin-left: 25%;
+	/*border: 1px dashed yellow;*/
+	margin-left: 30%;
+	position: relative;
+	bottom: -8px;
 	display: inline-block;
+	font-size: 125%;
+}
 
+header nav li {
+	margin-right: 12px;
+	padding: 2px 5px;
+	/*border: 1px dotted white;*/
+}
+
+header nav li:last-child {
+	margin-right: 0;
 }
 
 /*-----------------------------
