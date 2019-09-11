@@ -1,3 +1,10 @@
+/*@font-face {
+	font-family: "raleway-regular";
+	src: url("../fonts/raleway-regular.woff2") format("woff2");
+	src: url("../fonts/raleway-regular.woff") format("woff");
+	src: url("../fonts/raleway-regular.ttf") format("truetype");
+}*/
+
 /*Colors 
 Black:	#32383C;	rgba(50, 56, 60, 0.5);
 Cream:	#FFF3D9;
@@ -24,6 +31,17 @@ body {
 	/*background-color: lightgrey;*/
 }
 
+nav ul {
+	padding-left: 0;
+	margin: 0;
+	list-style-type: none;
+	text-align: center;
+}
+
+nav ul li {
+	display: inline-block;
+}
+
 /*-----------------------------
  PAGE HEADER
 -----------------------------*/
@@ -34,6 +52,23 @@ body {
 	width: 100%;
 	max-width: 1280px;
 	height: 150px;
+}
+
+header #logo {
+	margin-top: 35px;
+	margin-left: 2%;
+	width: 200px;
+	height: 75px;
+	background-image: url('../images/letha_logo_sketch.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+header nav {
+	border: 1px dashed yellow;
+	margin-left: 25%;
+	display: inline-block;
+
 }
 
 /*-----------------------------
