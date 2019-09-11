@@ -9,6 +9,7 @@
 Black:	#32383C;	rgba(50, 56, 60, 0.5);
 Cream:	#FFF3D9;
 Red:	#A02937;
+Yellow: #FFDA51;
 
 -----------------------*/
 
@@ -95,10 +96,38 @@ header nav li:last-child {
 }
 
 header #page-tools {
-	border: 1px dashed yellow;
+	/*border: 1px dashed yellow;*/
+	width: 250px;
 	height: 100%;
 	float: right;
-	
+}
+
+#page-tools #tools-navigation {
+	font-size: 120%;
+	float: right;
+	margin-top: 40px;
+	margin-right: 25px;
+}
+
+#page-tools #search {
+	margin-top: 45px;
+	float: right;
+}
+
+#page-tools #search input {
+	background-color: #FFF3D9;
+	border: none;
+	border-radius: 4px;
+	padding: 2px 10px;
+	font-size: 100%;
+	height: 22px;
+}
+#page-tools #search-button {
+	margin-left: -4px;
+	height: 100%;
+	padding: 4px 6px;
+	background-color: #32383C;
+	color: #FFDA51;
 }
 
 /*-----------------------------
