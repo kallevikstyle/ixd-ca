@@ -10,6 +10,7 @@ Black:	#32383C;	rgba(50, 56, 60, 0.5);
 Cream:	#FFF3D9;
 Red:	#A02937;
 Yellow: #FFDA51;
+Grey:	#918E8E;
 
 -----------------------*/
 
@@ -144,4 +145,15 @@ header #page-tools {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: top center;
+}
+
+/*-----------------------------
+ FOOTER
+-----------------------------*/
+
+#page-footer {
+	width: 100%;
+	max-width: 1280px;
+	height: 150px;
+	background-color: #918E8E;
 }
