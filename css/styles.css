@@ -63,13 +63,28 @@ footer ul li {
 	display: flex;
 }
 
+.cta-button {
+	background-color: #FFDA51;
+	font-size: 120%;
+	font-style: oblique;
+	color: #32383C;
+	padding: 12px 50px;
+	border-radius: 5px;
+}
+.cta-button::after {
+	content: " >>";
+}
+
 /*Font declarations
 ---------------------*/
-h1, h2 {
+h1, h2, .cta-button {
 	font-family: "patuaone-regular", georgia, serif;
 }
 nav ul {
 	font-family: "gill sans", helvetica, sans-serif;
+}
+p {
+	font-family: "opensans-regularp", arial, sans-serifn;
 }
 
 /*-----------------------------
@@ -83,6 +98,7 @@ nav ul {
 	max-width: 1280px;
 	height: 150px;
 	color: #FFF3D9;
+	z-index: 5;
 }
 
 #page-header h1 {
@@ -167,6 +183,41 @@ header #page-tools {
 	background-image: url('../images/letha_hero_1280.jpg');
 	background-repeat: no-repeat;
 	background-position: 80% 100%;
+	position: relative;
+	color: #FFF3D9;
+}
+#hero-image #promo-heading {
+	display: inline-block;
+	position: absolute;
+	top: 329px;
+	right: 15%;
+	font-size: 120%;
+	letter-spacing: 0.1em;
+}
+
+#hero-image #promo-heading span {
+	display: block;
+	margin-left: 150px;
+}
+
+#hero-image #promo-tagline {
+	font-style: oblique;
+	display: inline-block;
+	position: absolute;
+	top: 440px;
+	right: 8.5%;
+	letter-spacing: 0.1em;
+}
+#hero-image #promo-tagline span {
+	display: block;
+	margin-left: 120px;
+	line-height: 2.5em;
+}
+
+#hero-image .cta-button {
+	position: absolute;
+	bottom: 150px;
+	right: 5%;
 }
 
 /*Index Featured section
@@ -219,15 +270,31 @@ header #page-tools {
 	background-color: #918E8E;
 }
 
+#page-footer > section {
+	flex: 1;
+}
+
 #footer-social {
 	color: #32383C;
 	font-size: 250%;
-
+	margin: 50px auto;
 }
-
 #footer-social a {
 	/*border: 1px dashed yellow;*/
 	color: #32383C;
-
 }
-
+#credits p {
+	font-size: 70%;
+	text-align: center;
+	margin-top: 35px;
+}
+#page-footer #credits img {
+	width: 120px;
+	display: block;
+	margin: 50px auto 0 auto;
+}
+#company-details div {
+	font-size: 80%;
+	display: inline-block;
+	margin: 35px auto auto 150px;
+}
