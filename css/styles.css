@@ -46,14 +46,16 @@ body {
 	/*background-color: lightgrey;*/
 }
 
-nav ul {
+nav ul,
+footer ul {
 	padding-left: 0;
 	margin: 0;
 	list-style-type: none;
 	text-align: center;
 }
 
-nav ul li {
+nav ul li,
+footer ul li {
 	display: inline-block;
 }
 
@@ -100,7 +102,6 @@ header #logo {
 }
 
 header #page-navigation {
-	/*border: 1px dashed yellow;*/
 	margin-left: 50px;
 	float: left;
 	position: absolute;
@@ -113,7 +114,6 @@ header nav li {
 	margin-right: 12px;
 	padding: 2px 5px;
 	font-size: 125%;
-	/*border: 1px dotted white;*/
 }
 
 header nav li:last-child {
@@ -121,7 +121,6 @@ header nav li:last-child {
 }
 
 header #page-tools {
-	/*border: 1px dashed yellow;*/
 	width: 250px;
 	height: 100%;
 	float: right;
@@ -213,10 +212,22 @@ header #page-tools {
 /*-----------------------------
  FOOTER
 -----------------------------*/
-
 #page-footer {
 	width: 100%;
 	max-width: 1280px;
 	height: 150px;
 	background-color: #918E8E;
 }
+
+#footer-social {
+	color: #32383C;
+	font-size: 250%;
+
+}
+
+#footer-social a {
+	/*border: 1px dashed yellow;*/
+	color: #32383C;
+
+}
+
