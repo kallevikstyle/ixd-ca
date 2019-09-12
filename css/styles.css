@@ -1,9 +1,21 @@
-/*@font-face {
-	font-family: "raleway-regular";
-	src: url("../fonts/raleway-regular.woff2") format("woff2");
-	src: url("../fonts/raleway-regular.woff") format("woff");
-	src: url("../fonts/raleway-regular.ttf") format("truetype");
-}*/
+@font-face {
+	font-family: "patuaone-regular";
+	src: url("../fonts/patuaone-regular.woff2") format("woff2");
+	src: url("../fonts/patuaone-regular.woff") format("woff");
+	src: url("../fonts/patuaone-regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "opensans-regular";
+	src: url("../fonts/opensans-regular.woff2") format("woff2");
+	src: url("../fonts/opensans-regular.woff") format("woff");
+	src: url("../fonts/opensans-regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "opensans-bold";
+	src: url("../fonts/opensans-bold.woff2") format("woff2");
+	src: url("../fonts/opensans-bold.woff") format("woff");
+	src: url("../fonts/opensans-bold.ttf") format("truetype");
+}
 
 /*Colors 
 Black:	#32383C;	rgba(50, 56, 60, 0.5);
@@ -45,8 +57,15 @@ nav ul li {
 	display: inline-block;
 }
 
+.flex {
+	display: flex;
+}
+
 /*Font declarations
 ---------------------*/
+h1, h2 {
+	font-family: "patuaone-regular", georgia, serif;
+}
 nav ul {
 	font-family: "gill sans", helvetica, sans-serif;
 }
@@ -62,6 +81,11 @@ nav ul {
 	max-width: 1280px;
 	height: 150px;
 	color: #FFF3D9;
+}
+
+#page-header h1 {
+	position: absolute;
+	left: -9000px;
 }
 
 header #logo {
@@ -143,8 +167,47 @@ header #page-tools {
 	height: 853px;
 	background-image: url('../images/letha_hero_1280.jpg');
 	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: top center;
+	background-position: 80% 100%;
+}
+
+/*Index Featured section
+------------------*/
+#featured-section {
+	width: 100%;
+	justify-content: center;
+}
+#featured-section h2 {
+	color: #FFF3D9;
+	font-size: 110%;
+	margin: 0;
+}
+#featured-section > div {
+	position: relative;
+	width: 380px;
+	margin: 14px;
+}
+#featured-section img {
+	width: 100%;
+	border-radius: 5px;
+}
+#featured-section .featured-heading {
+	display: inline-block;
+	background-color: #32383C;
+	background-color: rgba(50, 56, 60, 0.9);
+	padding: 5px 15px;
+	position: absolute;
+	top: 10px;
+	right: 0;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+#featured-section div:last-child .featured-heading {
+	background-color: #FFDA51;
+	background-color: rgba(255, 218, 81, 0.9);
+	color: red;
+}
+#featured-section div:last-child .featured-heading h2 {
+	color: #A02937;
 }
 
 /*-----------------------------
