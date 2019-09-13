@@ -96,6 +96,13 @@ a {
 	flex-wrap: wrap;
 	justify-content: center;
 }
+.product-container {
+	border: 1px dotted red;
+	background-color: #ffffff;
+	margin: 10px;
+	width: 280px;
+	height: 280px;
+}
 #top {
 	text-align: center;
 	padding: 15px;
@@ -339,12 +346,6 @@ header #page-tools {
 	margin-bottom: 40px;
 }
 
-#search-results .product-container {
-	border: 1px dotted red;
-	margin: 10px;
-	width: 280px;
-	height: 280px;
-}
 /*Categories
 -------------*/
 #product-categories .category-container {
