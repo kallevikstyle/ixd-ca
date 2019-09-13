@@ -260,6 +260,31 @@ header #page-tools {
 	color: #A02937;
 }
 
+/*Shop - main section
+---------------------*/
+#shop-container {
+	background-color: #FFF3D9;
+	position: relative;
+	top: 150px;
+	width: 100%;
+	/*height: auto;*/
+}
+
+#shop-container #search-results {
+	width: 95%;
+	border: 1px dashed Black;
+	margin: 0 auto;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#search-results .product-container {
+	border: 1px dotted red;
+	margin: 10px;
+	width: 280px;
+	height: 280px;
+}
+
 /*-----------------------------
  FOOTER
 -----------------------------*/
