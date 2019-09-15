@@ -48,7 +48,8 @@ body {
 main {
 	background-color: #FFF3D9;
 }
-main header {
+main > header,
+main > article {
 	margin-left: 2.5%;
 }
 
@@ -58,6 +59,9 @@ h2 {
 }
 p {
 	font-size: 95%;
+}
+img {
+	border-radius: 10px;
 }
 nav ul,
 footer ul,
@@ -372,19 +376,34 @@ header #page-tools {
 	margin-bottom: 40px;
 }
 #category-text {
-	border: 1px dotted yellow;
 	background-color: #ffffff;
 	padding: 5px 10px;
 	flex: 1;
 }
 #category-image {
-	border: 1px dotted green;
-	background-color: #32383C;
 	flex: 1;
-	background-image: url('https://via.placeholder.com/600x270.png');
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
+	max-width: 50%;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+#category-image img {
+
+}
+
+/*Product page
+--------------*/
+#product-description {
+	width: 50%;
+	order: 2;
+	padding: 0 20px;
+}
+#product-image {
+	width: 50%;
+	order: 1;
+}
+#product-image img {
+	width: 100%;
 }
 
 
