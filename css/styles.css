@@ -53,6 +53,9 @@ h2 {
 	margin-top: 0;
 	margin-left: 2.5%;
 }
+p {
+	font-size: 95%;
+}
 nav ul,
 footer ul,
 #breadcrumb ul,
@@ -96,7 +99,7 @@ a {
 	flex-wrap: wrap;
 	justify-content: center;
 }
-.product-container {
+.item-container {
 	border: 1px dotted red;
 	background-color: #ffffff;
 	margin: 10px;
@@ -271,6 +274,9 @@ header #page-tools {
 	right: 8.5%;
 	letter-spacing: 0.1em;
 }
+#hero-image #promo-tagline p {
+	font-size: 100%;
+}
 #hero-image #promo-tagline span {
 	display: block;
 	margin-left: 120px;
@@ -340,13 +346,13 @@ header #page-tools {
 #search-filters ul li:last-child {
 	margin-right: 0;
 }
-#shop-container {
+#shop-section {
 	background-color: #FFF3D9;
 	width: 100%;
 	margin-bottom: 40px;
 }
 
-/*Categories
+/*Categories section
 -------------*/
 #product-categories .category-container {
 	border: 1px dotted red;
@@ -354,6 +360,20 @@ header #page-tools {
 	width: 280px;
 	height: 150px;
 }
+
+/*Category pages
+------------------*/
+#category-description {
+	/*WORK*/
+}
+#category-text {
+	background-color: #ffffff;
+	flex: 1;
+}
+#category-image {
+	flex: 1;
+}
+
 
 /*-----------------------------
  FOOTER
