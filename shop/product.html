@@ -49,7 +49,8 @@
 	</div>
 	<!-- Main content -->
 	<main role="main">
-		<article class="flex">
+		<article id="product-page" class="flex">
+			<!-- Product description -->
 			<div id="product-description">
 				<header>
 					<h2 id="product-name">Product name</h2>
@@ -57,8 +58,26 @@
 				</header>
 				<section id="product-text">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat arcu et pretium vestibulum. Vivamus pretium eu libero eget tempus. Duis in tortor a massa rhoncus lobortis et eu orci.</p>
+					<h3>Materials</h3>
+					<ul id="materials">
+						<li>Lorem</li>
+						<li>Ipsum</li>
+					</ul>
 				</section>
+				<!-- Sizes -->
+				<section id="sizes">
+					<h3>Select your size</h3>
+					<form>
+						<select name="sizes">
+							<option value="43">43</option>
+							<option value="44">44</option>
+						</select>
+					</form>
+				</section>
+				<!-- Shopping cart button -->
+				<div class="cta-button">ADD TO CART <i class="fas fa-shopping-cart"></i></div>
 			</div>
+			<!-- Product image -->
 			<section id="product-image">
 				<img src="../images/product-dummy.jpg" alt="Quality shoes from Letha">
 			</section>
@@ -94,7 +113,7 @@
 		</section>
 		<!-- Credits -->
 		<section id="credits">
-			<img src="../../images/letha_logo_sketch.png" alt="Letha - Handcrafted Leather Shoes">
+			<img src="../images/letha_logo_sketch.png" alt="Letha - Handcrafted Leather Shoes">
 			<p>Course Assignment in Interaction Design, Noroff – Designed by Asbj&oslash;rn Kallevik</p>
 		</section>
 		<!-- Address -->

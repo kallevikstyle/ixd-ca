@@ -128,6 +128,7 @@ nav ul a {
 }
 p,
 a,
+h3,
 #breadcrumb,
 #search-filters {
 	font-family: "opensans-regular", arial, sans-serif;
@@ -393,6 +394,9 @@ header #page-tools {
 
 /*Product page
 --------------*/
+#product-page {
+	width: 95%;
+}
 #product-description {
 	width: 50%;
 	order: 2;
@@ -405,7 +409,28 @@ header #page-tools {
 #product-image img {
 	width: 100%;
 }
-
+#sizes h3 {
+	display: inline;
+}
+#sizes form {
+	margin-left: 10px;
+	display: inline;
+}
+#sizes select {
+	font-size: 115%;
+	width: 60px;
+}
+#product-page .cta-button {
+	display: inline-block;
+	float: right;
+	margin: 20px;
+}
+#product-page .cta-button:after {
+	content: "";
+}
+#product-page .cta-button i {
+	margin-left: 10px;
+}
 
 /*-----------------------------
  FOOTER
