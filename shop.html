@@ -56,34 +56,39 @@
 				<li><a id="filter-category" href="#">Category <i class="fas fa-caret-down"></i></a></li>
 				<li><a id="filter-size" href="#">Size <i class="fas fa-caret-down"></i></a></li>
 				<li><a id="filter-color" href="#">Color <i class="fas fa-caret-down"></i></a></li>
-				<li><a id="filter-sort" href="#">Sort by <i class="fas fa-caret-down"></i></a></li>
+				<!-- <li><a id="filter-sort" href="#">Sort by <i class="fas fa-caret-down"></i></a></li> -->
 			</ul>
 			<!-- Filtered search -->
 			<div id="filter-box">
 				<form>
-					<label>
-						<input type="checkbox" name="category" value="brogues">Brogues
-					</label>
-					<label>
-						<input type="checkbox" name="category" value="boots">Boots
-					</label>
-					<label>
-						<input type="checkbox" name="size" value="43">43
-					</label>
-					<label>
-						<input type="checkbox" name="size" value="44">44
-					</label>
-					<label>
-						<input type="checkbox" name="color" value="beige">Beige
-					</label>
-					<label>
-						<input type="checkbox" name="color" value="black">Black
-					</label>
-					<label>
-						<input type="checkbox" name="color" value="brown">Brown
-					</label>
+					<fieldset id="category">
+						<label>
+							<input class="filter" type="checkbox" name="category" value="brogues">Brogues
+						</label>
+						<label>
+							<input class="filter" type="checkbox" name="category" value="boots">Boots
+						</label>
+					</fieldset>
+					<fieldset id="size">
+						<label>
+							<input class="filter" type="checkbox" name="size" value="43">43
+						</label>
+						<label>
+							<input class="filter" type="checkbox" name="size" value="44">44
+						</label>
+					</fieldset>
+					<fieldset id="color">
+						<label>
+							<input class="filter" type="checkbox" name="color" value="beige">Beige
+						</label>
+						<label>
+							<input class="filter" type="checkbox" name="color" value="black">Black
+						</label>
+						<label>
+							<input class="filter" type="checkbox" name="color" value="brown">Brown
+						</label>
+					</fieldset>
 				</form>
-
 			</div>
 		</section>
 		<section id="shop-section">
@@ -92,7 +97,19 @@
 					<a href="shop/product.html">Product</a>
 				</div>
 				<div class="item-container">
-
+					<div class="product-thumbnail">
+						<img src="https://images.unsplash.com/photo-1493054882428-e4c79a9bfa3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1329&q=80">
+					</div>
+					<div class="product-teaser">
+						<div class="product-title">
+							<h3>Product name</h3>
+							<p>Lorem impum dolor sit amet</p>
+						</div>
+						<div class="product-details">
+							<div class="product-stars">5</div>
+							<div class="product-price">&dollar;199</div>
+						</div>
+					</div>
 				</div>
 				<div class="item-container">
 
