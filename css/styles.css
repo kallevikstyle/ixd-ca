@@ -378,16 +378,14 @@ header #page-tools {
 	background-color: #32383C;
 	color: #FFF3D9;
 	font-size: 90%;
-	width: 100px;
-	height: 50px;
+	padding: 5px 10px;
 	position: absolute;
-	/*left: 2.5%;*/
-	border: 1px dashed red;
 	display: none;
 }
 #filter-box label {
-	display: block;
+	display: none;
 }
+
 
 /*Categories section
 -------------*/

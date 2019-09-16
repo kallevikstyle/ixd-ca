@@ -4,9 +4,18 @@ function filterSearch() {
 		filterSize = document.querySelector('#filter-size'),
 		filterColor = document.querySelector('#filter-color'),
 		filterSort = document.querySelector('#filter-sort');
-	// Event listeners for search filters
+	let checkBoxes = [],
+		activeFilters = [],
+		checkBoxCount = 0;
+	// Event listeners to show filter-box on hover
 	filterCategory.addEventListener('mouseover', function() {
-		showFilterBox(getElementLeftPosition(filterCategory));	
+		showFilterBox(getElementLeftPosition(filterCategory));
+		// 
+		checkBoxes = document.getElementsByName('category');
+		
+		//checkBoxes.forEach(showCheckBoxes);
+
+
 	});
 	filterSize.addEventListener('mouseover', function() {
 		showFilterBox(getElementLeftPosition(filterSize));	
@@ -17,6 +26,10 @@ function filterSearch() {
 	filterSort.addEventListener('mouseover', function() {
 		showFilterBox(getElementLeftPosition(filterSort));	
 	});
+
+	//test
+	//let checkBoxes = document.getElementsByName('category');
+	//console.log(checkBoxes[1].value);
 }
 
 function showFilterBox(leftPos) {
@@ -28,6 +41,9 @@ function showFilterBox(leftPos) {
 	filterBox.addEventListener('mouseleave', function() {
 		filterBox.style.display = 'none';
 	});
+}
+function showCheckBoxes(item, index) {
+	console.log(item, index);
 }
 
 function getElementLeftPosition(element) {
