@@ -1,4 +1,4 @@
-function filterSearch() {
+function filterSearch(shoes) {
 	// Assign variables to search filters
 	const filterCategory = document.querySelector('#filter-category'),
 		filterSize = document.querySelector('#filter-size'),
@@ -22,11 +22,14 @@ function filterSearch() {
 		document.querySelector('#color').style.display = 'block';
 	});
 
+	console.log(shoes);
+
 	// Update activeFilters array
 	updateActiveFilters(checkBoxes);
 	
 }
 
+// Show and hide filter search box
 function showFilterBox(leftPos) {
 	let filterBox = document.querySelector('#filter-box');
 
@@ -64,4 +67,12 @@ function updateActiveFilters(searchFilters) {
 	}
 }
 
-filterSearch();
+// Get product data from JSON
+(function() {
+	fetch('http://kallevikstyle.no/ixd-ca/json/shoes.json')
+	.then(result => result.json())
+	.then((shoes) => {
+		filterSearch(shoes);
+	})
+	.catch(err => console.log(err));
+})();

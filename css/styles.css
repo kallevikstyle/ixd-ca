@@ -49,6 +49,7 @@ main {
 	background-color: #FFF3D9;
 }
 main > header,
+main > section,
 main > article,
 main > div {
 	margin-left: 2.5%;
@@ -260,6 +261,9 @@ header #page-tools {
 
 /*Index CTA
 ------------*/
+#index {
+	background-color: #32383C;
+}
 
 #hero-image {
 	margin-top: -150px;
@@ -316,7 +320,7 @@ header #page-tools {
 ------------------*/
 #featured-section {
 	background-color: #32383C;
-	width: 100%;
+	
 	justify-content: center;
 }
 #featured-section h2 {
@@ -347,7 +351,6 @@ header #page-tools {
 #featured-section div:last-child .featured-heading {
 	background-color: #FFDA51;
 	background-color: rgba(255, 218, 81, 0.9);
-	color: red;
 }
 #featured-section div:last-child .featured-heading h2 {
 	color: #A02937;
@@ -360,8 +363,6 @@ header #page-tools {
 }
 #search-filters ul {
 	text-align: left;
-	margin-left: 2.5%;
-
 }
 #search-filters ul li {
 	margin-right: 15px;
@@ -371,7 +372,6 @@ header #page-tools {
 }
 #shop-section {
 	background-color: #FFF3D9;
-	width: 100%;
 	margin-bottom: 40px;
 }
 #filter-box {
@@ -440,9 +440,6 @@ header #page-tools {
 	height: 150px;
 }
 
-#product-categories h2 {
-	margin-left: 2.5%;
-}
 /*Category pages
 ------------------*/
 #category-header {
