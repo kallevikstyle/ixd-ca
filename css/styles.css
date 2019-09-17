@@ -134,7 +134,7 @@ a {
 h1, h2, .cta-button {
 	font-family: "patuaone-regular", georgia, serif;
 }
-nav ul a {
+nav ul a, .product-price {
 	font-family: "gill sans", helvetica, sans-serif;
 }
 p,
@@ -392,6 +392,10 @@ header #page-tools {
 
 /*Product containers
 -------------------*/
+.product-teaser {
+	height: 100px;
+	padding: 0 10px;
+}
 .product-thumbnail {
 	width: 100%;
 	height: 180px;
@@ -402,28 +406,30 @@ header #page-tools {
 	object-fit: cover;
 }
 #shop-section .product-title {
-	background-color: green;
-	display: inline-block;
-	width: 180px;
-	height: 100%;
+	flex: 2;
 }
 .product-title h3 {
-	display: inline-block;
-	/*line-height: 0;*/
-	/*margin-top: 5px;*/
+	line-height: 0;
+
 }
 .product-title p {
 	font-size: 80%;
-	font-style: oblique;
-	margin-top: -10px;
+	font-style: italic;
+	margin-top: 20px;
 }
 
 #shop-section .product-details {
-	display: inline-block;
-	width: 95px;
-	height: 100px;
-	margin-top: -40px;
-	background-color: grey;
+	flex: 1;
+	padding: 12px 0;
+}
+#shop-section .product-stars {
+	font-size: 80%;
+	color: #A02937;
+	text-align: right;
+}
+#shop-section .product-price {
+	margin-top: 56px;
+	text-align: right;
 }
 /*Categories section
 -------------*/
@@ -460,6 +466,9 @@ header #page-tools {
 
 /*Product page
 --------------*/
+#product-page {
+	padding: 50px 0 100px 0;
+}
 #product-description {
 	width: 50%;
 	order: 2;
