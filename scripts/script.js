@@ -4,7 +4,9 @@ function filterSearch(shoes) {
 		filterSize = document.querySelector('#filter-size'),
 		filterColor = document.querySelector('#filter-color'),
 		filterSort = document.querySelector('#filter-sort');
-	let checkBoxes = document.getElementsByClassName('filter');
+	let checkBoxes = document.getElementsByClassName('filter'),
+		activeFilterValues = [],
+		activeFilterNames = [];
 	// Event listeners to show filter-box on hover
 	filterCategory.addEventListener('mouseover', function() {
 		hideFieldSets(document.getElementsByTagName('fieldset'));
@@ -21,14 +23,29 @@ function filterSearch(shoes) {
 		showFilterBox(getElementLeftPosition(filterColor));
 		document.querySelector('#color').style.display = 'block';
 	});
-
 	console.log(shoes);
 
-	// Update activeFilters array
-	updateActiveFilters(checkBoxes);
+	// Update activeFilters arrays with all filters currently selected
+	for (let i = 0; i < checkBoxes.length; i++) {
+		checkBoxes[i].addEventListener('change', function() {
+			if (!checkBoxes[i].checked) {
+				// Remove unselected items from array
+				activeFilterNames.splice(activeFilterValues.indexOf(checkBoxes[i].value), 1);
+				activeFilterValues.splice(activeFilterValues.indexOf(checkBoxes[i].value), 1);
+			} else {
+				// Add selected values and filter names to arrays
+				activeFilterNames.push(checkBoxes[i].name);
+				activeFilterValues.push(checkBoxes[i].value);
+				
+			}
+			showSearchResults(shoes, activeFilterNames, activeFilterValues);
+			console.log(activeFilterNames);
+			console.log(activeFilterValues);
+		});
+	}
 
 
-	
+
 }
 
 // Show and hide filter search box
@@ -53,21 +70,27 @@ function getElementLeftPosition(element) {
 	// Return the left position of element
 	return element.getBoundingClientRect().left;
 }
-// Update activeFilters array with all search filters currently selected
-function updateActiveFilters(searchFilters) {
-	let activeFilters = [];
-	for (let i = 0; i < searchFilters.length; i++) {
-		searchFilters[i].addEventListener('change', function() {
-			if (!searchFilters[i].checked) {
-				// Remove unselected items from array
-				activeFilters.splice(activeFilters.indexOf(searchFilters[i].value), 1);
-			} else {
-				// Add selected values to array
-				activeFilters.push(searchFilters[i].value);
-			}
-		});
+
+function showSearchResults(shoes, activeFilterNames, activeFilterValues) {
+	const searchResultsContainer = document.querySelector('#search-results');
+
+
+	// Empty search results displayed on page
+	searchResultsContainer.innerHTML = "";
+
+	// Iterate through all items in shoes.json
+	for (let i = 0; i < shoes.length; i++) {
+		// Iterate through all search filter values
+		for (let f = 0; f < activeFilterValues.length; f++) {
+			// console.log(activeFilterValues[f] === shoes[i].activeFilterNames[f]);
+			let filterName = activeFilterNames[f];
+			console.log(activeFilterValues[f]);
+			console.log(activeFilterNames[f]);
+			console.log(shoes[i].activeFilterNames[f]); // DETTE GÅR IKKE
+		}
 	}
 }
+
 
 // Get product data from JSON
 (function() {
