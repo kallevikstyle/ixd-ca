@@ -26,6 +26,8 @@ function filterSearch(shoes) {
 
 	// Update activeFilters array
 	updateActiveFilters(checkBoxes);
+
+
 	
 }
 
