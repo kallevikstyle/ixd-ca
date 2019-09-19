@@ -150,7 +150,7 @@ function displayProducts(parentContainer, product) {
 	<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
 	`
 	productPrice.innerHTML = `
-	199
+	&dollar;${product.price}
 	`
 	productDetails.appendChild(productStars);
 	productDetails.appendChild(productPrice);
