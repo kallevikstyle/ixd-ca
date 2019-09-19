@@ -23,9 +23,9 @@ function filterSearch(shoes) {
 		showFilterBox(getElementLeftPosition(filterColor));
 		document.querySelector('#color').style.display = 'block';
 	});
-	console.log(shoes);
 
 	// Update activeFilters arrays with all filters currently selected
+	// - Giving Name and Values arrays the same index
 	for (let i = 0; i < checkBoxes.length; i++) {
 		checkBoxes[i].addEventListener('change', function() {
 			if (!checkBoxes[i].checked) {
@@ -38,7 +38,7 @@ function filterSearch(shoes) {
 				activeFilterValues.push(checkBoxes[i].value);
 				
 			}
-			showSearchResults(shoes, activeFilterNames, activeFilterValues);
+			findSearchResults(shoes, activeFilterNames, activeFilterValues);
 			console.log(activeFilterNames);
 			console.log(activeFilterValues);
 		});
@@ -71,26 +71,99 @@ function getElementLeftPosition(element) {
 	return element.getBoundingClientRect().left;
 }
 
-function showSearchResults(shoes, activeFilterNames, activeFilterValues) {
+function findSearchResults(shoes, activeFilterNames, activeFilterValues) {
 	const searchResultsContainer = document.querySelector('#search-results');
+	let shoesResult = new Set();
 
-
-	// Empty search results displayed on page
-	searchResultsContainer.innerHTML = "";
-
-	// Iterate through all items in shoes.json
+	// Iterate through all items in shoes.json to search for matches
 	for (let i = 0; i < shoes.length; i++) {
 		// Iterate through all search filter values
 		for (let f = 0; f < activeFilterValues.length; f++) {
-			// console.log(activeFilterValues[f] === shoes[i].activeFilterNames[f]);
-			let filterName = activeFilterNames[f];
-			console.log(activeFilterValues[f]);
-			console.log(activeFilterNames[f]);
-			console.log(shoes[i].activeFilterNames[f]); // DETTE GÅR IKKE
+			let match = matchFiltersWithProducts(activeFilterNames[f], activeFilterValues[f], shoes[i]);
+			// Push the match, if any, to resulting arrray
+			if (match) {
+				shoesResult.add(match);
+			}
 		}
 	}
+	// Convert SET to ARRAY
+	shoesResult = Array.from(shoesResult);
+	
+	// Display products on page
+	searchResultsContainer.innerHTML = "";
+	for (let item = 0; item < shoesResult.length; item++) {
+		displayProducts(searchResultsContainer, shoesResult[item]);
+	}
 }
+// Search for match by filters in shoes.json
+function matchFiltersWithProducts(filterName, filterValue, product) {
+	// Check which type of filter is used, and match values with shoe properties
+	switch (filterName) {
+		case "category":
+			if (filterValue === product.category) {
+				return product;
+			} else {
+				return;
+			}
+			break;
+		case "size":
+			if (product.size.includes(filterValue)) {
+				return product;
+			}
+			break;
+		case "color":
+			if (filterValue === product.color) {
+				return product;
+			}
+			break;
+	}
+}
+function displayProducts(parentContainer, product) {
+	const itemContainer = document.createElement('div'),
+		productImage = document.createElement('div'),
+		productTeaser = document.createElement('div'),
+		productTitle = document.createElement('div'),
+		productDetails = document.createElement('div')
+		productStars = document.createElement('div'),
+		productPrice = document.createElement('div');
 
+
+
+	// Assign classes to div elements
+	itemContainer.className = "item-container";
+	productImage.className = "product-thumbnail";
+	productTeaser.className = "product-teaser flex";
+	productTitle.className = "product-title";
+	productDetails.className = "product-details";
+	productStars.className = "product-stars";
+	productPrice.className = "product-price";
+
+	// Construct the element hierarchy
+	productImage.innerHTML = `
+	<img src="${product.imageUrl}" alt="${product.name}">
+	`
+	productTitle.innerHTML = `
+	<h3>${product.name}</h3>
+	<p>${product.shortdescription}</p>
+	`
+	productStars.innerHTML = `
+	<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+	`
+	productPrice.innerHTML = `
+	199
+	`
+	productDetails.appendChild(productStars);
+	productDetails.appendChild(productPrice);
+	productTeaser.appendChild(productTitle);
+	productTeaser.appendChild(productDetails);
+	itemContainer.appendChild(productImage);
+	itemContainer.appendChild(productTeaser);
+	parentContainer.appendChild(itemContainer);
+
+
+	// console.log(products);
+
+}
 
 // Get product data from JSON
 (function() {
