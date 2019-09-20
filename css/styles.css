@@ -104,13 +104,14 @@ a {
 }
 .item-list {
 	width: 100%;
-	border: 1px dashed Black;
 	margin: 0 auto;
 	flex-wrap: wrap;
 	justify-content: center;
 }
+.item-list a {
+	color: #32383C;
+}
 .item-container {
-	border: 1px dotted red;
 	background-color: #ffffff;
 	margin: 10px;
 	width: 280px;
@@ -433,12 +434,15 @@ header #page-tools {
 }
 /*Categories section
 -------------*/
+#product-categories h2 {
+	margin-left: 2.5%;
+}
 #product-categories .category-container {
-	border: 1px dotted red;
 	margin: 10px;
 	width: 280px;
 	height: 150px;
 }
+
 
 /*Category pages
 ------------------*/

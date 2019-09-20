@@ -1,25 +1,36 @@
+function showAllProducts(shoes){
+	const searchResultsContainer = document.querySelector('#search-results');
+	// Load all products onto page
+	for (let i = 0; i < shoes.length; i++) {
+		displayProducts(searchResultsContainer, shoes[i]);
+	}
+	// Activate filter search function
+	filterSearch(shoes);
+}
+
 function filterSearch(shoes) {
 	// Assign variables to search filters
 	const filterCategory = document.querySelector('#filter-category'),
 		filterSize = document.querySelector('#filter-size'),
 		filterColor = document.querySelector('#filter-color'),
-		filterSort = document.querySelector('#filter-sort');
+		filterSort = document.querySelector('#filter-sort'),
+		fieldSets = document.getElementsByTagName('fieldset');
 	let checkBoxes = document.getElementsByClassName('filter'),
 		activeFilterValues = [],
 		activeFilterNames = [];
 	// Event listeners to show filter-box on hover
 	filterCategory.addEventListener('mouseover', function() {
-		hideFieldSets(document.getElementsByTagName('fieldset'));
+		hideElements(fieldSets);
 		showFilterBox(getElementLeftPosition(filterCategory));
 		document.querySelector('#category').style.display = 'block';
 	});
 	filterSize.addEventListener('mouseover', function() {
-		hideFieldSets(document.getElementsByTagName('fieldset'));
+		hideElements(fieldSets);
 		showFilterBox(getElementLeftPosition(filterSize));
 		document.querySelector('#size').style.display = 'block';	
 	});
 	filterColor.addEventListener('mouseover', function() {
-		hideFieldSets(document.getElementsByTagName('fieldset'));
+		hideElements(fieldSets);
 		showFilterBox(getElementLeftPosition(filterColor));
 		document.querySelector('#color').style.display = 'block';
 	});
@@ -38,14 +49,10 @@ function filterSearch(shoes) {
 				activeFilterValues.push(checkBoxes[i].value);
 				
 			}
+			// Perform search based on selected filters
 			findSearchResults(shoes, activeFilterNames, activeFilterValues);
-			console.log(activeFilterNames);
-			console.log(activeFilterValues);
 		});
 	}
-
-
-
 }
 
 // Show and hide filter search box
@@ -59,10 +66,10 @@ function showFilterBox(leftPos) {
 		filterBox.style.display = 'none';
 	});
 }
-// This function hides all fieldsets
-function hideFieldSets(fieldSets) {
-	for (let i = 0; i < fieldSets.length; i++) {
-		fieldSets[i].style.display = 'none';
+// This function hides elements
+function hideElements(elements) {
+	for (let i = 0; i < elements.length; i++) {
+		elements[i].style.display = 'none';
 	}
 }
 
@@ -109,25 +116,30 @@ function matchFiltersWithProducts(filterName, filterValue, product) {
 		case "size":
 			if (product.size.includes(filterValue)) {
 				return product;
+			} else {
+				return;
 			}
 			break;
 		case "color":
 			if (filterValue === product.color) {
 				return product;
+			} else {
+				return;
 			}
 			break;
 	}
 }
+//Display search results on page
 function displayProducts(parentContainer, product) {
-	const itemContainer = document.createElement('div'),
+	const productLink = document.createElement('a'),
+		productUrl = `shop/product.html?id=${product.id}`,
+		itemContainer = document.createElement('div'),
 		productImage = document.createElement('div'),
 		productTeaser = document.createElement('div'),
 		productTitle = document.createElement('div'),
 		productDetails = document.createElement('div')
 		productStars = document.createElement('div'),
 		productPrice = document.createElement('div');
-
-
 
 	// Assign classes to div elements
 	itemContainer.className = "item-container";
@@ -139,6 +151,7 @@ function displayProducts(parentContainer, product) {
 	productPrice.className = "product-price";
 
 	// Construct the element hierarchy
+	productLink.setAttribute("href", productUrl);
 	productImage.innerHTML = `
 	<img src="${product.imageUrl}" alt="${product.name}">
 	`
@@ -150,7 +163,7 @@ function displayProducts(parentContainer, product) {
 	<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
 	`
 	productPrice.innerHTML = `
-	199
+	&dollar;${product.price}
 	`
 	productDetails.appendChild(productStars);
 	productDetails.appendChild(productPrice);
@@ -158,11 +171,8 @@ function displayProducts(parentContainer, product) {
 	productTeaser.appendChild(productDetails);
 	itemContainer.appendChild(productImage);
 	itemContainer.appendChild(productTeaser);
-	parentContainer.appendChild(itemContainer);
-
-
-	// console.log(products);
-
+	productLink.appendChild(itemContainer);
+	parentContainer.appendChild(productLink);
 }
 
 // Get product data from JSON
@@ -170,7 +180,7 @@ function displayProducts(parentContainer, product) {
 	fetch('http://kallevikstyle.no/ixd-ca/json/shoes.json')
 	.then(result => result.json())
 	.then((shoes) => {
-		filterSearch(shoes);
+		showAllProducts(shoes);
 	})
 	.catch(err => console.log(err));
 })();
