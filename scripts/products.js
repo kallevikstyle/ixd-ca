@@ -1,11 +1,27 @@
 function showAllProducts(shoes){
 	const searchResultsContainer = document.querySelector('#search-results');
-	// Load all products onto page
-	for (let i = 0; i < shoes.length; i++) {
-		displayProducts(searchResultsContainer, shoes[i]);
+
+	if (!window.location.search) {
+		// Load all products onto page
+		for (let i = 0; i < shoes.length; i++) {
+			displayProducts(searchResultsContainer, shoes[i]);
+		}
+	} else {
+		// Filter by search field
+		const searchText = window.location.search.slice(8); 
+			searchPattern = new RegExp(searchText, 'i');
+		let searchResult = shoes.filter(function(shoes) {
+			return searchPattern.test(shoes.name);
+		});
+
+
+		for (let i = 0; i < searchResult.length; i++) {
+			displayProducts(searchResultsContainer, searchResult[i]);
+		}
 	}
 	// Activate filter search function
 	filterSearch(shoes);
+	
 }
 
 function filterSearch(shoes) {
@@ -18,6 +34,8 @@ function filterSearch(shoes) {
 	let checkBoxes = document.getElementsByClassName('filter'),
 		activeFilterValues = [],
 		activeFilterNames = [];
+
+	
 	// Event listeners to show filter-box on hover
 	filterCategory.addEventListener('mouseover', function() {
 		hideElements(fieldSets);
@@ -50,7 +68,13 @@ function filterSearch(shoes) {
 				
 			}
 			// Perform search based on selected filters
-			findSearchResults(shoes, activeFilterNames, activeFilterValues);
+			if (activeFilterValues.length < 1) {
+				document.querySelector('#search-results').innerHTML = "";
+				window.location.search = "";
+				showAllProducts(shoes);
+			} else {
+				findSearchResults(shoes, activeFilterNames, activeFilterValues);
+			}
 		});
 	}
 }
@@ -140,6 +164,8 @@ function displayProducts(parentContainer, product) {
 		productDetails = document.createElement('div')
 		productStars = document.createElement('div'),
 		productPrice = document.createElement('div');
+	let starCount = 1,
+		productRating = "";
 
 	// Assign classes to div elements
 	itemContainer.className = "item-container";
@@ -149,6 +175,17 @@ function displayProducts(parentContainer, product) {
 	productDetails.className = "product-details";
 	productStars.className = "product-stars";
 	productPrice.className = "product-price";
+
+	// Find product's rating
+	while (starCount <= 5) {
+		if (starCount <= product.rating) {
+			productRating += `<i class="fas fa-star"></i>`;
+		} else {
+			productRating += `<i class="far fa-star"></i>`;
+		}
+		
+		starCount++;
+	}
 
 	// Construct the element hierarchy
 	productLink.setAttribute("href", productUrl);
@@ -160,7 +197,7 @@ function displayProducts(parentContainer, product) {
 	<p>${product.shortdescription}</p>
 	`;
 	productStars.innerHTML = `
-	<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+	${productRating}
 	`;
 	productPrice.innerHTML = `
 	&dollar;${product.price}

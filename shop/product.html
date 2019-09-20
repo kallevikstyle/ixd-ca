@@ -34,8 +34,9 @@
 			</nav>
 			<!-- Search -->
 			<form id="search" role="search">
-				<input type="text" name="search" maxlength="20" placeholder="Search products">
-				<a id="search-button" href="#"><i class="fas fa-search"></i></a>
+				<input id="search-field" type="text" name="search" maxlength="20" placeholder="Search products">
+				<a id="search-button"><i class="fas fa-search"></i></a>
+				<script type="text/javascript" src="../scripts/search-field.js"></script>
 			</form>
 		</section>
 	</header>
@@ -44,7 +45,7 @@
 		<ul>
 			<li><a href="../index.html" title="Home" role="link">Home</a></li>
 			<li><a href="../shop.html" title="Shop" role="link">Shop</a></li>
-			<li>Product</li>
+			<li id="product-name">Product</li>
 		</ul>
 	</div>
 	<!-- Main content -->
@@ -52,38 +53,15 @@
 		<article id="product-page" class="flex">
 			<!-- Product description -->
 			<div id="product-description">
-				<!-- <header>
-					<h2 id="product-name">Product name</h2>
-					<div id="product-stars"></div>
-				</header>
-				<section id="product-text">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat arcu et pretium vestibulum. Vivamus pretium eu libero eget tempus. Duis in tortor a massa rhoncus lobortis et eu orci.</p>
-					<h3>Materials</h3>
-					<ul id="materials">
-						<li>Lorem</li>
-						<li>Ipsum</li>
-					</ul>
-				</section> -->
-				<!-- Sizes -->
-				<!-- <section id="sizes">
-					<h3>Select your size</h3>
-					<form>
-						<select name="sizes">
-							<option value="43">43</option>
-							<option value="44">44</option>
-						</select>
-					</form>
-				</section> -->
-				<!-- Shopping cart button -->
-				<!-- <div class="cta-button">ADD TO CART <i class="fas fa-shopping-cart"></i></div> -->
+				<!-- Product details are listed here -->
 			</div>
 			<!-- Product image -->
 			<section id="product-image">
-				<img src="../images/product-dummy.jpg" alt="Quality shoes from Letha">
+				
 			</section>
 		</article>
 		<section id="shop-section">
-			<h2>You might also like</h2>
+			<h2 id="product-suggestions">You might also like</h2>
 			<div class="flex item-list" id="search-results">
 				
 			</div>

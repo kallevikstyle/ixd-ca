@@ -10,7 +10,7 @@
     "price": 199,
     "size": ["43", "44"],
     "color": "brown",
-    "discount": null
+    "popular": true
   },
   {
 "name": "Bashful Brogue",
@@ -23,7 +23,7 @@
     "price": 179,
     "size": ["43", "44"],
     "color": "brown",
-    "discount": null
+    "popular": true
   },
   {
 "name": "Nice and Easy",
@@ -36,7 +36,7 @@
     "price": 229,
     "size": ["44"],
     "color": "brown",
-    "discount": null
+    "popular": true
   },
   {
 "name": "Calm and Casual",
@@ -49,7 +49,7 @@
     "price": 129,
     "size": ["44"],
     "color": "beige",
-    "discount": 25
+    "popular": true
   },
   {
 "name": "Urbana",
@@ -62,6 +62,6 @@
     "price": 159,
     "size": ["43"],
     "color": "brown",
-    "discount": null
+    "popular": false
   }
 ]
