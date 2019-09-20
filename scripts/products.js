@@ -154,17 +154,17 @@ function displayProducts(parentContainer, product) {
 	productLink.setAttribute("href", productUrl);
 	productImage.innerHTML = `
 	<img src="${product.imageUrl}" alt="${product.name}">
-	`
+	`;
 	productTitle.innerHTML = `
 	<h3>${product.name}</h3>
 	<p>${product.shortdescription}</p>
-	`
+	`;
 	productStars.innerHTML = `
 	<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-	`
+	`;
 	productPrice.innerHTML = `
 	&dollar;${product.price}
-	`
+	`;
 	productDetails.appendChild(productStars);
 	productDetails.appendChild(productPrice);
 	productTeaser.appendChild(productTitle);
