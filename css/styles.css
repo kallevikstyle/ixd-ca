@@ -19,6 +19,7 @@
 
 /*Colors 
 Black:	#32383C;	rgba(50, 56, 60, 0.5);
+Black (light): #444C52;	rgba(68, 76, 82, 0.5)
 Cream:	#FFF3D9;
 Red:	#A02937;
 Yellow: #FFDA51;
@@ -179,20 +180,30 @@ header #logo {
 	background-repeat: no-repeat;
 	background-size: contain;
 }
+#logo a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
 
 header #page-navigation {
 	margin-left: 50px;
+	margin-bottom: 10px;
 	float: left;
 	position: absolute;
 	bottom: 0;
-	display: inline-block;
-	
+	display: inline-block;	
 }
 
 header nav li {
 	margin-right: 12px;
 	padding: 2px 5px;
 	font-size: 125%;
+	border-radius: 5px;
+}
+header nav li.active {
+	text-decoration: overline;
+	
 }
 
 header nav li:last-child {
@@ -201,6 +212,7 @@ header nav li:last-child {
 
 header #page-tools {
 	width: 250px;
+	margin-bottom: 10px;
 	height: 100%;
 	float: right;
 }
@@ -226,12 +238,18 @@ header #page-tools {
 	font-size: 100%;
 	height: 22px;
 }
+#page-tools #search input:hover,
+#page-tools #search input:focus {
+	background-color: white;
+}
 #page-tools #search-button {
 	margin-left: -4px;
 	height: 100%;
 	padding: 4px 6px;
-	background-color: #32383C;
 	color: #FFDA51;
+}
+#search i {
+	padding: 4px;
 }
 #page-tools #search-button:hover {
 	cursor: pointer;
@@ -239,6 +257,12 @@ header #page-tools {
 
 #page-header + * {
 	margin-top: 150px;
+}
+
+nav li:hover,
+#search #search-button:hover {
+	background-color: #485157;
+	background-color: rgba(72, 81, 87, 0.5);
 }
 
 /* Breadcrumb
