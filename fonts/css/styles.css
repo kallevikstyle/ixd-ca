@@ -119,10 +119,6 @@ a {
 	height: 280px;
 	padding: 5px;
 	border-radius: 10px;
-	box-shadow: 0px 0px 4px -1px rgba(50, 56, 60,0.75);
-}
-.item-container:hover {
-	box-shadow: 2px 2px 8px -1px rgba(50, 56, 60,0.75);
 }
 .header-image {
 	background-repeat: no-repeat;
@@ -181,7 +177,7 @@ header #logo {
 	margin-left: 2%;
 	width: 200px;
 	height: 75px;
-	background-image: url('../images/letha_logo.png');
+	background-image: url('../images/letha_logo_sketch.png');
 	background-repeat: no-repeat;
 	background-size: contain;
 }
