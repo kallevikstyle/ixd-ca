@@ -86,6 +86,7 @@ function showProductDetails(product) {
 	productImage.innerHTML = `
 		<img src="${product.imageUrl}" alt="${product.name} from Letha">
 	`;
+	
 
 	parentContainer.appendChild(productHeader);
 	parentContainer.appendChild(productText);

@@ -99,9 +99,16 @@ a {
 	color: #32383C;
 	padding: 12px 50px;
 	border-radius: 5px;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 .cta-button::after {
 	content: " >>";
+}
+#hero-image .cta-button:hover {
+	background-color: #32383C;
+	background-color: rgba(50, 56, 60, 0.01);
+	color: #FFDA51;
+	border: 1px solid #FFDA51;
 }
 .item-list {
 	width: 100%;
@@ -346,6 +353,9 @@ nav li:hover,
 	position: absolute;
 	bottom: 250px;
 	right: 5%;
+}
+#hero-image .cta-button:hover {
+	
 }
 
 /*Index Featured section
@@ -650,13 +660,32 @@ nav li:hover,
 	font-size: 90%;
 	padding: 5px 10px;
 }
+/*-----------
+Form validation
+*/
+
+#contact-container .invalid-field {
+	border: 2px dashed red;
+}
+.invalid-text {
+	color: red;
+	font-size: 70%;
+	margin-top: -10px;
+}
+#invalid-name,
+#invalid-email,
+#invalid-message,
+#invalid-subscription-email {
+	display: none;
+}
+
 /*-----------------------------
  FOOTER
 -----------------------------*/
 #page-footer {
 	width: 100%;
 	max-width: 1280px;
-	height: 150px;
+	height: 200px;
 	background-color: #918E8E;
 }
 

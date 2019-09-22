@@ -8,9 +8,11 @@
     "category": "boots",
     "rating": 5,
     "price": 199,
+    "discount": null,
     "size": ["43", "44"],
     "color": "brown",
-    "popular": true
+    "popular": true,
+    "new": false
   },
   {
 "name": "Bashful Brogue",
@@ -21,9 +23,11 @@
     "category": "brogues",
     "rating": 4,
     "price": 179,
+    "discount": null,
     "size": ["43", "44"],
     "color": "brown",
-    "popular": true
+    "popular": true,
+    "new": false
   },
   {
 "name": "Nice and Easy",
@@ -34,9 +38,11 @@
     "category": "brogues",
     "rating": 5,
     "price": 229,
+    "discount": 25,
     "size": ["44"],
     "color": "brown",
-    "popular": true
+    "popular": true,
+    "new": false
   },
   {
 "name": "Calm and Casual",
@@ -47,9 +53,11 @@
     "category": "boots",
     "rating": 3,
     "price": 129,
+    "discount": 25,
     "size": ["44"],
     "color": "beige",
-    "popular": true
+    "popular": true,
+    "new": true
   },
   {
 "name": "Urbana",
@@ -60,8 +68,10 @@
     "category": "boots",
     "rating": 4,
     "price": 159,
+    "discount": 50,
     "size": ["43"],
     "color": "brown",
-    "popular": false
+    "popular": false,
+    "new": true
   }
 ]

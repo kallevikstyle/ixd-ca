@@ -6,7 +6,7 @@ function showAllProducts(shoes){
 		for (let i = 0; i < shoes.length; i++) {
 			displayProducts(searchResultsContainer, shoes[i]);
 		}
-	} else {
+	} else if (window.location.search.includes("search")) {
 		// Filter by search field
 		const searchText = window.location.search.slice(8); 
 			searchPattern = new RegExp(searchText, 'i');
@@ -14,7 +14,30 @@ function showAllProducts(shoes){
 			return searchPattern.test(shoes.name);
 		});
 
-
+		for (let i = 0; i < searchResult.length; i++) {
+			displayProducts(searchResultsContainer, searchResult[i]);
+		}
+	} else if (window.location.search.includes("discount")) {
+		// Search for products with discount
+		let searchResult = shoes.filter(function(shoes) {
+			return (shoes.discount);
+		});
+		for (let i = 0; i < searchResult.length; i++) {
+			displayProducts(searchResultsContainer, searchResult[i]);
+		}
+	}  else if (window.location.search.includes("popular")) {
+		// Search for popular products
+		let searchResult = shoes.filter(function(shoes) {
+			return (shoes.popular);
+		});
+		for (let i = 0; i < searchResult.length; i++) {
+			displayProducts(searchResultsContainer, searchResult[i]);
+		}
+	} else if (window.location.search.includes("new")) {
+		// Search for new products
+		let searchResult = shoes.filter(function(shoes) {
+			return (shoes.new);
+		});
 		for (let i = 0; i < searchResult.length; i++) {
 			displayProducts(searchResultsContainer, searchResult[i]);
 		}
