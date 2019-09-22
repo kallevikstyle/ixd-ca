@@ -480,9 +480,21 @@ nav li:hover,
 	margin-left: 2.5%;
 }
 #product-categories .category-container {
+	background-color: white;
+	font-size: 250%;
+	text-align: center;
 	margin: 10px;
 	width: 280px;
 	height: 150px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 4px -1px rgba(50, 56, 60,0.75);
+}
+#product-categories .category-container a {
+	display: block;
+
+}
+#product-categories .category-container:hover {
+	box-shadow: 2px 2px 8px -1px rgba(50, 56, 60,0.75);
 }
 
 
@@ -503,9 +515,6 @@ nav li:hover,
 	overflow: hidden;
 }
 
-#category-image img {
-
-}
 
 /*Product page
 --------------*/
@@ -560,6 +569,7 @@ nav li:hover,
 #product-suggestions {
 	margin-left: 2.5%;
 }
+
 /*About us
 ------------*/
 #about-container {
@@ -660,24 +670,7 @@ nav li:hover,
 	font-size: 90%;
 	padding: 5px 10px;
 }
-/*-----------
-Form validation
-*/
 
-#contact-container .invalid-field {
-	border: 2px dashed red;
-}
-.invalid-text {
-	color: red;
-	font-size: 70%;
-	margin-top: -10px;
-}
-#invalid-name,
-#invalid-email,
-#invalid-message,
-#invalid-subscription-email {
-	display: none;
-}
 
 /*-----------------------------
  FOOTER

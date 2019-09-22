@@ -81,7 +81,9 @@ function showProductDetails(product) {
 	`;
 	productPrice.innerHTML = `<p>&dollar;${product.price}</p>`;
 	cartButton.innerHTML = `
+		<a href="#">
 		ADD TO CART <i class="fas fa-shopping-cart"></i>
+		</a>
 	`;
 	productImage.innerHTML = `
 		<img src="${product.imageUrl}" alt="${product.name} from Letha">
