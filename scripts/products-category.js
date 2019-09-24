@@ -22,7 +22,7 @@ function showAllProducts(shoes) {
 //Display search results on page
 function displayProducts(parentContainer, product) {
 	const productLink = document.createElement('a'),
-		productUrl = `shop/product.html?id=${product.id}`,
+		productUrl = `../product.html?id=${product.id}`,
 		itemContainer = document.createElement('div'),
 		productImage = document.createElement('div'),
 		productTeaser = document.createElement('div'),
